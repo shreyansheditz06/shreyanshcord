@@ -574,7 +574,7 @@ async def send(ctx, addy, value):
 
         response = requests.post(url, json=payload, headers=headers)
         response_data = response.json()
-        await message.edit(content=f"**Successfully Sent {value}$ To {addy}**\nhttps://live.blockcypher.com/ltc/tx/{response_data["txId"]}")
+        await message.edit(content=f"**Successfully Sent {value}$ To {addy}**")
     
     except requests.RequestException as e:
         await ctx.send(f"**Failed to send LTC. Error: {e}**")
